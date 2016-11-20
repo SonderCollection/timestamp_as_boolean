@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Treat timestamp as a boolean field}
   spec.description   = %q{Treat timestamp as a boolean field}
-  spec.homepage      = "https://github.com/Sonder/timestamp_as_boolean"
+  spec.homepage      = "https://github.com/SonderCollection/timestamp_as_boolean"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
