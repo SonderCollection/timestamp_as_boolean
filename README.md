@@ -22,6 +22,24 @@ Or install it yourself as:
 
 ## Usage
 
+1. Include `TimestampAsBoolean` in the model
+
+eg:
+```ruby
+class SampleClass < ActiveRecord::Base
+  include TimestampAsBoolean
+end
+```
+
+2. Now, assuming your model has a field named `accepted_at`, add `timestamp_as_boolean :accepted` to create a pseudo boolean field that will set or unset the timestamp when the boolean field was first turned to true.
+```ruby
+class SampleClass < ActiveRecord::Base
+  include TimestampAsBoolean
+  timestamp_as_boolean :accepted
+end
+```
+
+
 TODO: Write usage instructions here
 
 ## Development
