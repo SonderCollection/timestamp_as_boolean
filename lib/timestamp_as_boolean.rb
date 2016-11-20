@@ -13,8 +13,8 @@ module TimestampAsBoolean
 
     POSSIBLE_TRUTHY_VALUES = [true, '1', 't', 'true'].freeze
 
-    def timestamp_as_bool(attrx, method = nil)
-      method ||= attrx.to_s.gsub('_at', '')
+    def timestamp_as_boolean(method, attrx = nil)
+      attrx ||= "#{method}_at"
 
       @@timestamped_to_bool_list ||= []
       @@timestamped_to_bool_list << method.to_sym
