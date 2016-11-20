@@ -7,9 +7,6 @@ module TimestampAsBoolean
   extend ActiveSupport::Concern
 
   module ClassMethods
-    # this should only be used with timestamps end in "_at"
-    # NEXT STEPS:
-    # add optional parameter to name the field instead of using magic
 
     POSSIBLE_TRUTHY_VALUES = [true, '1', 't', 'true'].freeze
 
