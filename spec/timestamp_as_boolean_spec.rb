@@ -1,6 +1,11 @@
 require 'spec_helper'
 
 describe TimestampAsBoolean do
+  before(:each) do
+    @now = Time.current
+    allow(Time).to receive(:current) { @now }
+  end
+
   context "default `at` field" do
     class SampleClass
       include TimestampAsBoolean
@@ -12,7 +17,7 @@ describe TimestampAsBoolean do
     it "sets the time when the boolean value is true" do
       x = SampleClass.new
       x.example = true
-      expect(x.example_at).not_to be nil
+      expect(x.example_at).to be @now
     end
 
     it "resets the timestamp to nil when the value is false" do
@@ -44,7 +49,7 @@ describe TimestampAsBoolean do
     it "sets the time when the boolean value is true" do
       x = SampleOverrideClass.new
       x.example = true
-      expect(x.example2_at).not_to be nil
+      expect(x.example2_at).to be @now
     end
 
     it "resets the timestamp to nil when the value is false" do
